@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+ <center><div class="class">
+   <h2>Click Below Button to Read Text</h2>
+  <div id="demo">
+
+    <button type="button" onclick="txtload('mcoe.txt', callbackfunc)">Click On ME</button>
+    </div>
+    
+
+</div></center> 
+
+
+<script>
+function txtload(url, callbackfunc) {
+  var xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        callbackfunc(xhttp);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+function callbackfunc(xhttp) {
+  document.getElementById("demo").innerHTML = xhttp.responseText;
+}
+</script>
+</body>
+</html>

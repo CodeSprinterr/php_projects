@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<employee>
+    <empdetails>
+        <no>1</no>
+        <firstname>aakash</firstname>
+        <lastname>vaidya</lastname>
+        <email>akashvaidya17@gmail.com</email>
+        <contact>6396035994</contact>
+        <designation>developer</designation>
+        <specialization>java</specialization>
+    </empdetails>
+    <empdetails>
+        <no>2</no>
+        <firstname>yuvraj</firstname>
+        <lastname>vaidya</lastname>
+        <email>akashvaidya17@gmail.com</email>
+        <contact>6396035994</contact>
+        <designation>developer</designation>
+        <specialization>python</specialization>     
+    </empdetails>
+</employee>

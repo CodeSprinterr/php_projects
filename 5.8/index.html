@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xml Read </title>
+    <script>
+        function xmlread() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var i;
+                    var xmlobj = xhttp.responseXML;
+                    var table = "<tr><th>SNo.</th><th>Name</th><th>Specialization</th></tr>";
+                    var x = xmlobj.getElementsByTagName("empdetails");
+                    for (i = 0; i < x.length; i++) {
+                        table += "<tr><td>" +
+                            x[i].getElementsByTagName("no")[0].childNodes[0].nodeValue +
+                            "</td><td>" +
+                            x[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
+                            "</td><td>" +
+                            x[i].getElementsByTagName("specialization")[0].childNodes[0].nodeValue +
+                            "</td></tr>";
+                    }
+                    document.getElementById("demo").innerHTML = table;
+                }
+            };
+            xhttp.open("GET", "emp.xml", true);
+            xhttp.send();
+        }
+       
+    </script>
+</head>
+
+<body>
+
+    <h1>READ A XML FILE</h1>
+
+    <button type="button" onclick="xmlread()">CLICK</button>
+    <br><br>
+    <table id="demo"></table>
+</body>
+
+</html>
